@@ -1,0 +1,97 @@
+@import '../variables/styles.scss';
+
+.nav{
+    @media(min-width: 1030px){
+        padding-right: 40px;
+    }
+}
+
+.nav-content{
+    position: sticky;
+    top: 0;
+    flex-direction: column;
+    @include create-flex(false);
+    padding: 10px 15px 0 15px;
+
+    .search-btn{
+        @media(min-width: 1030px){
+            display: none !important;
+        }
+    }
+
+    .nav-item{
+        color: $primary-text-color;
+        font-size: 1.7rem;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        @include create-flex(true);
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover{
+            background-color: #cccccc2d;
+        }
+
+        p{
+            display: none;
+        }
+
+        @media(min-width: 1030px){
+            width: 100%;
+            height: 100%;
+            justify-content: initial;
+            gap: 10px;
+            margin-bottom: 10px;
+            border-radius: 30px;
+            padding: 10px;
+            
+
+            p{
+                display: block;
+                font-size: 1.3rem;
+            }
+
+        }
+    }
+
+    .tweet-button{
+        background-color: $blue-color;
+
+        &:hover{
+            background-color: #3887c0;
+        }
+    }
+    .large-size{
+        display: none;
+    }
+
+    @media(min-width: 1030px){
+        .small-size{
+            display: none
+        }
+        .large-size{
+            @include create-flex(true);
+            border-radius: 20px;
+            padding: 15px 20px;
+            width: 100%;
+            
+
+            button{
+                background: none;
+                border: none;
+                color: $primary-text-color;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.user-avatar{
+    @include user-avatar(small);
+    margin-top: 20px;
+
+    @media(min-width: 1030px){
+        align-self: flex-start;
+    }
+}
